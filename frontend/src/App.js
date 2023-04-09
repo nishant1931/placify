@@ -59,7 +59,7 @@ const App = () => {
             }
           >
             {routes}
-          </Suspense>{" "}
+          </Suspense>
         </main>
       </BrowserRouter>
     </AuthContext.Provider>

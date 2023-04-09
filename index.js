@@ -7,13 +7,13 @@ const mongoose = require("mongoose");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
-
-require("dotenv").config();
 const app = express();
+
+app.use(cors());
+require("dotenv").config();
 
 app.use(bodyParser({ limit: "50mb" }));
 app.use(bodyParser.json());
-app.use(cors());
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

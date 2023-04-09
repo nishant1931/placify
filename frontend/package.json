@@ -1,5 +1,5 @@
 {
-  "proxy": "https://exuberant-erin-starfish.cyclic.app/",
+  "proxy": "http://127.0.0.1:5000/",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
