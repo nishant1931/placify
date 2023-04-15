@@ -55,7 +55,7 @@ const NewPlace = () => {
       // formData.append("creator", auth.userId);
       formData.append("image", formState.inputs.image.value);
       await sendRequest(
-        `https://placify-chi.vercel.app/api/places`,
+        `https://placify-pi.vercel.app/api/places`,
         "POST",
         formData,
         {

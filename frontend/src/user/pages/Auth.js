@@ -72,7 +72,7 @@ const Auth = () => {
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(
-          `https://placify-chi.vercel.app/api/users/login`,
+          `https://placify-pi.vercel.app/api/users/login`,
           "POST",
           JSON.stringify({
             email: formState.inputs.email.value,
@@ -93,7 +93,7 @@ const Auth = () => {
         formData.append("password", formState.inputs.password.value);
         formData.append("image", formState.inputs.image.value);
         const responseData = await sendRequest(
-          `https://placify-chi.vercel.app/api/users/signup`,
+          `https://placify-pi.vercel.app/api/users/signup`,
           "POST",
           formData
         );
