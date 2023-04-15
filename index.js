@@ -9,8 +9,8 @@ const path = require("path");
 const cors = require("cors");
 const app = express();
 
-app.use(cors());
 require("dotenv").config();
+app.use(cors());
 
 app.use(bodyParser({ limit: "50mb" }));
 app.use(bodyParser.json());
