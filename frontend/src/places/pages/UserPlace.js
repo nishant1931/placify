@@ -16,7 +16,7 @@ const UserPlace = () => {
     const fetchPlaces = async () => {
       try {
         const responseData = await sendRequest(
-          `https://placify-chi.vercel.app/api/places/user/${userId}`
+          `http://localhost:5000/api/places/user/${userId}`
         );
         setLoadedPlaces(responseData.places.places);
       } catch (error) {}
