@@ -31,7 +31,7 @@ const PlaceItem = (props) => {
     setShowConfirmModal(false);
     try {
       await sendRequest(
-        `https://placify-pi.vercel.app/api/places/${props.id}`,
+        `http://localhost:5000/api/places/${props.id}`,
         "DELETE",
         null,
         {
