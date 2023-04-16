@@ -14,7 +14,7 @@ const Users = () => {
     const fetchUsers = async () => {
       try {
         const responseData = await sendRequest(
-          `http://localhost:5000/api/users`
+          `https://placify-eight.vercel.app/api/users`
         );
         setLoadedUsers(responseData.users);
       } catch (error) {}
