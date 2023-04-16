@@ -5,25 +5,25 @@ export const useHttpClient = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState();
 
-  // const activeHttpRequest = useRef([]);
+  const activeHttpRequest = useRef([]);
 
   const sendRequest = useCallback(
     async (url, method = "GET", body = null, headers = {}) => {
       setIsLoading(true);
-      // const httpAbortCtrll = new AbortController();
-      // activeHttpRequest.current.push(httpAbortCtrll);
+      const httpAbortCtrll = new AbortController();
+      activeHttpRequest.current.push(httpAbortCtrll);
       try {
         const response = await fetch(url, {
           method,
           body,
           headers,
-          // signal: httpAbortCtrll.signal,
+          signal: httpAbortCtrll.signal,
         });
 
         const responseData = await response.json();
-        // activeHttpRequest.current = activeHttpRequest.current.filter(
-        //   (reqCtrl) => reqCtrl !== httpAbortCtrll
-        // );
+        activeHttpRequest.current = activeHttpRequest.current.filter(
+          (reqCtrl) => reqCtrl !== httpAbortCtrll
+        );
 
         if (!response.ok) {
           throw new Error(responseData.message);
@@ -40,11 +40,11 @@ export const useHttpClient = () => {
     []
   );
 
-  // useEffect(() => {
-  //   return () => {
-  //     activeHttpRequest.current.forEach((abortCtrl) => abortCtrl.abort());
-  //   };
-  // }, []);
+  useEffect(() => {
+    return () => {
+      activeHttpRequest.current.forEach((abortCtrl) => abortCtrl.abort());
+    };
+  }, []);
 
   const clearErrorHandler = () => {
     setIsError(null);

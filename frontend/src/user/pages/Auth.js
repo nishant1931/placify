@@ -92,8 +92,9 @@ const Auth = () => {
         formData.append("name", formState.inputs.name.value);
         formData.append("password", formState.inputs.password.value);
         formData.append("image", formState.inputs.image.value);
+
         const responseData = await sendRequest(
-          `https://placify-eight.vercel.app/api/users/signup`,
+          "https://placify-eight.vercel.app/api/users/signup",
           "POST",
           formData
         );
