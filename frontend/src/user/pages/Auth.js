@@ -96,7 +96,8 @@ const Auth = () => {
         const responseData = await sendRequest(
           "https://placify-eight.vercel.app/api/users/signup",
           "POST",
-          formData
+          formData,
+          { "Content-Type": "application/json" }
         );
 
         auth.login(responseData.userId, responseData.token);
