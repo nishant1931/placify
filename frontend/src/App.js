@@ -15,6 +15,8 @@ const UserPlace = React.lazy(() => import("./places/pages/UserPlace"));
 const App = () => {
   const { token, userId, login, logout } = useAuth();
 
+  console.log(window.location.host);
+
   let routes;
 
   if (token) {

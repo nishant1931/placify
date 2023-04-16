@@ -149,7 +149,7 @@ const deletePlace = async (req, res, next) => {
       return next(err);
     }
 
-    if (place.creator.toString() !== req.userData.userId) {
+    if (place.creator._id.toString() !== req.userData.userId) {
       const err = new HttpError(
         "You are not authorized to delete the place.",
         403

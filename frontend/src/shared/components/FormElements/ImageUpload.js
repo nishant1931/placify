@@ -20,6 +20,7 @@ const ImageUpload = (props) => {
     fileReader.readAsDataURL(file);
   }, [file]);
 
+  console.log(file);
   const pickImageHandler = () => {
     filePickerRef.current.click();
   };
@@ -36,6 +37,8 @@ const ImageUpload = (props) => {
       setIsValid(false);
       fileIsValid = false;
     }
+
+    console.log(file);
 
     props.onInput(props.id, pickedFile, fileIsValid);
   };
