@@ -59,7 +59,6 @@ const NewPlace = () => {
         "POST",
         formData,
         {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${auth.token}`,
         }
       );
