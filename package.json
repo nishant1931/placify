@@ -4,7 +4,7 @@
   "description": "meetups",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "server": "nodemon index.js",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run start\" \"npm run frontend\" --ignore frontend"
