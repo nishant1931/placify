@@ -57,7 +57,7 @@ const NewPlace = () => {
       await sendRequest(
         `https://placify-eight.vercel.app/api/places`,
         "POST",
-        formData,
+        JSON.stringify(formData),
         {
           "Content-Type": "application/json",
           Authorization: `Bearer ${auth.token}`,
